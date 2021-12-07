@@ -325,7 +325,7 @@ class _BinaryGaussianProcessClassifierLaplace(BaseEstimator):
         )
         pi_star = (COEFS * integrals).sum(axis=0) + 0.5 * COEFS.sum()
 
-        return np.vstack((1 - pi_star, pi_star)).T
+        return np.vstack((1 - pi_star, pi_star)).T, var_f_star
 
     def log_marginal_likelihood(
         self, theta=None, eval_gradient=False, clone_kernel=True
