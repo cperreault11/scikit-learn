@@ -210,7 +210,7 @@ class NaivelyCalibratedLinearSVC(LinearSVC):
         self.df_min_ = df.min()
         self.df_max_ = df.max()
 
-    def predict_proba(self, X):
+    def predict_proba(self, X,uncertainty=[]):
         """Min-max scale output of `decision_function` to [0, 1]."""
         df = self.decision_function(X)
         calibrated_df = (df - self.df_min_) / (self.df_max_ - self.df_min_)

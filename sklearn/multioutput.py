@@ -447,7 +447,7 @@ class MultiOutputClassifier(ClassifierMixin, _MultiOutputEstimator):
         return True
 
     @available_if(_check_predict_proba)
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Return prediction probabilities for each class of each output.
 
         This method will raise a ``ValueError`` if any of the
@@ -771,7 +771,7 @@ class ClassifierChain(MetaEstimatorMixin, ClassifierMixin, _BaseChain):
         return self
 
     @_available_if_base_estimator_has("predict_proba")
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Predict probability estimates.
 
         Parameters

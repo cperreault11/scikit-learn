@@ -237,7 +237,7 @@ class KNeighborsClassifier(KNeighborsMixin, ClassifierMixin, NeighborsBase):
 
         return y_pred
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Return probability estimates for the test data X.
 
         Parameters
@@ -593,7 +593,7 @@ class RadiusNeighborsClassifier(RadiusNeighborsMixin, ClassifierMixin, Neighbors
 
         return y_pred
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Return probability estimates for the test data X.
 
         Parameters

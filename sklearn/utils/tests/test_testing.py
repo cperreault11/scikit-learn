@@ -411,7 +411,7 @@ class MockEst:
     def predict(self, X):
         return X
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         return X
 
     def score(self, X):
@@ -452,7 +452,7 @@ class MockMetaEstimator:
         """
 
     @available_if(lambda self: hasattr(self.delegate, "predict_proba"))
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """This is available only if delegate has predict_proba.
 
         Parameters
@@ -501,7 +501,7 @@ class MockMetaEstimatorDeprecatedDelegation:
         """
 
     @if_delegate_has_method(delegate="delegate")
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """This is available only if delegate has predict_proba.
 
         Parameters

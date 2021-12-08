@@ -1202,7 +1202,7 @@ class SGDClassifier(BaseSGDClassifier):
         return True
 
     @available_if(_check_proba)
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Probability estimates.
 
         This method is only available for log loss and modified Huber loss.

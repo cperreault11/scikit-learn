@@ -796,7 +796,7 @@ def test_check_classifiers_multilabel_output_format_predict_proba():
     y_test = y[-test_size:]
 
     class MultiLabelClassifierPredictProba(_BaseMultiLabelClassifierMock):
-        def predict_proba(self, X):
+        def predict_proba(self, X, uncertainty=[]):
             return self.response_output
 
     # 1. unknown output type

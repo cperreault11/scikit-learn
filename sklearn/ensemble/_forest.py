@@ -844,7 +844,7 @@ class ForestClassifier(ClassifierMixin, BaseForest, metaclass=ABCMeta):
 
             return predictions
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """
         Predict class probabilities for X.
 

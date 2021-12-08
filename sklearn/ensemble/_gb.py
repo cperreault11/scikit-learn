@@ -1382,7 +1382,7 @@ class GradientBoostingClassifier(ClassifierMixin, BaseGradientBoosting):
             encoded_labels = self.loss_._raw_prediction_to_decision(raw_predictions)
             yield self.classes_.take(encoded_labels, axis=0)
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Predict class probabilities for X.
 
         Parameters

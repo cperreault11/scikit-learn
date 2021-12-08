@@ -151,7 +151,7 @@ class _ConstantPredictor(BaseEstimator):
 
         return np.repeat(self.y_, _num_samples(X))
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         check_is_fitted(self)
         self._validate_data(
             X,
@@ -463,7 +463,7 @@ class OneVsRestClassifier(
             return self.label_binarizer_.inverse_transform(indicator)
 
     @available_if(_estimators_has("predict_proba"))
-    def predict_proba(self, X):
+    def predict_proba(self, X,uncertainty=[]):
         """Probability estimates.
 
         The returned estimates for all classes are ordered by label of classes.

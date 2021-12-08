@@ -965,7 +965,7 @@ class MinimalClassifier:
         self._most_frequent_class_idx = counts.argmax()
         return self
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         check_is_fitted(self)
         X = check_array(X)
         proba_shape = (X.shape[0], self.classes_.size)

@@ -813,7 +813,7 @@ class BaseSVC(ClassifierMixin, BaseLibSVM, metaclass=ABCMeta):
         return True
 
     @available_if(_check_proba)
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Compute probabilities of possible outcomes for samples in X.
 
         The model need to have probability information computed at training

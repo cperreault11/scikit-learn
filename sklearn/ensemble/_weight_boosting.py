@@ -851,7 +851,7 @@ class AdaBoostClassifier(ClassifierMixin, BaseWeightBoosting):
             decision /= n_classes - 1
         return softmax(decision, copy=False)
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Predict class probabilities for X.
 
         The predicted class probabilities of an input sample is computed as

@@ -399,7 +399,7 @@ class CalibratedClassifierCV(ClassifierMixin, MetaEstimatorMixin, BaseEstimator)
             self.feature_names_in_ = first_clf.feature_names_in_
         return self
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Calibrated probabilities of classification.
 
         This function returns calibrated probabilities of classification
@@ -673,7 +673,7 @@ class _CalibratedClassifier:
         self.classes = classes
         self.method = method
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Calculate calibrated probabilities.
 
         Calculates classification calibrated probabilities

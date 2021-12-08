@@ -106,7 +106,7 @@ class _BaseNB(ClassifierMixin, BaseEstimator, metaclass=ABCMeta):
         log_prob_x = logsumexp(jll, axis=1)
         return jll - np.atleast_2d(log_prob_x).T
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """
         Return probability estimates for the test vector X.
 

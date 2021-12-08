@@ -227,7 +227,7 @@ class CheckingClassifier(ClassifierMixin, BaseEstimator):
             X, y = self._check_X_y(X)
         return self.classes_[np.zeros(_num_samples(X), dtype=int)]
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Predict probabilities for each class.
 
         Here, the dummy classifier will provide a probability of 1 for the
@@ -326,7 +326,7 @@ class NoSampleWeightWrapper(BaseEstimator):
     def predict(self, X):
         return self.est.predict(X)
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         return self.est.predict_proba(X)
 
     def _more_tags(self):

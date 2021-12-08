@@ -793,7 +793,7 @@ def test_multimetric_scorer_calls_method_once_classifier_no_decision():
     predict_proba_call_cnt = 0
 
     class MockKNeighborsClassifier(KNeighborsClassifier):
-        def predict_proba(self, X):
+        def predict_proba(self, X, uncertainty=[]):
             nonlocal predict_proba_call_cnt
             predict_proba_call_cnt += 1
             return super().predict_proba(X)

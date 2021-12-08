@@ -307,7 +307,7 @@ class SelfTrainingClassifier(MetaEstimatorMixin, BaseEstimator):
         )
         return self.base_estimator_.predict(X)
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Predict probability for each possible outcome.
 
         Parameters

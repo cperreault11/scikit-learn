@@ -364,7 +364,7 @@ class VotingClassifier(ClassifierMixin, _BaseVoting):
         return True
 
     @available_if(_check_voting)
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """Compute probabilities of possible outcomes for samples in X.
 
         Parameters

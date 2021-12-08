@@ -1634,7 +1634,7 @@ class LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):
 
         return self
 
-    def predict_proba(self, X):
+    def predict_proba(self, X, uncertainty=[]):
         """
         Probability estimates.
 
