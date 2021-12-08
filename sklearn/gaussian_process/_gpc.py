@@ -778,7 +778,7 @@ class GaussianProcessClassifier(ClassifierMixin, BaseEstimator):
         else:
             X = self._validate_data(X, ensure_2d=False, dtype=None, reset=False)
 
-        return self.base_estimator_.predict_proba(X)
+        return self.base_estimator_.predict_proba(X,uncertainty=uncertainty)
 
     @property
     def kernel_(self):
